@@ -1,17 +1,15 @@
-const express = require('express');
-const bodyParser = require('body-parser')
+const dotenv = require('dotenv');
+dotenv.config();
+const express = require('express'); 
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
-const helmet = require('helmet')
+const helmet = require('helmet');
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
-mongoose.connect('mongodb+srv://maax6:Rg9sjeyxMKX2LyV@cluster0.yncag.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-{ 
-  useNewUrlParser: true,
-  useUnifiedTopology: true 
-})
+mongoose.connect(`mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PWD}@${process.env.CLUSTER_NAME}.yncag.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`)
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
   
