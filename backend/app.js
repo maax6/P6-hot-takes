@@ -28,10 +28,14 @@ app.use((req, res, next) => {
   res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
   next();
 });
-
+// Permet d'acceder au body depuis req
 app.use(express.json());
+// Routes
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes); 
+
+
+
 
 module.exports = app;

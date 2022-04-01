@@ -1,5 +1,5 @@
 // Importer le modèle sauce
-const Sauce = require('../models/sauce');
+const Sauce = require('../models/Sauce');
 // importer filesystem
 const fs = require('fs');
 
@@ -18,7 +18,7 @@ exports.createSauce = (req, res, next) => {
             error
         }));
 };
-//Récupérer un sauce par son id
+//Récupérer une sauce par id
 exports.getOneSauce = (req, res, next) => {
     Sauce.findOne({
         _id: req.params.id
