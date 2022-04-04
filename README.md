@@ -6,7 +6,7 @@ Construisez une API sécurisée pour une application d'avis gastronomiques
 ---
 ## Format Environement: 
 
-USER_NAME=xxxxxx
-USER_PWD=xxxxxxxx
-CLUSTER_NAME=xxxxxx
-DB_NAME=xxxxxxx
+USER_NAME=xxxxxx  
+USER_PWD=xxxxxxxx   
+CLUSTER_NAME=xxxxxx  
+DB_NAME=xxxxxxx  
