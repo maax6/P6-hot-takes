@@ -3,7 +3,7 @@ dotenv.config();
 // console.log(process.env)
 // const cors = require('cors')
 const express = require('express'); 
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const helmet = require('helmet');
