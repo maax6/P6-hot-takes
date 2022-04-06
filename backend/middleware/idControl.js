@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
 
             // Comparaison du userId de la sauce et celui du token
             if(sauce.userId && sauce.userId !== userId) {
-                res.status(403).json({ message: 'Requête non autorisée 👀!' });
+                res.status(403).json({ message: '403: unauthorized request. 👀!' });
             } else {
                 next();
             }
