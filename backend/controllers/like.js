@@ -2,6 +2,7 @@
 const Sauce = require('../models/Sauce') // sauceSchema
 
 exports.likeSauce = (req, res, next) => {
+    console.log(req.body);
     // récupère le champs likes
     const likeStatus = req.body.like;
     // récupère l'id de la sauce dans l'URL
