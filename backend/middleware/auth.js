@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 // Exportation du middleware pour authentification
 module.exports = (req, res, next) => {
   try {
-// On récupère le token à l'index 1 du tableau avec la fonction split Bearer en 0
+// On récupère le token à l'index [1] du tableau avec la fonction split. Bearer en index [0]
     const token = req.headers.authorization.split(' ')[1];
 // Comparer token avec la fonction verify de jasonwebtoken et la clé secrete provisoire.
     const decodedToken = jwt.verify(token, process.env.SCRT_TKN);

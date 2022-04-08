@@ -53,8 +53,6 @@ exports.likeSauce = (req, res, next) => {
                     .catch((error) => res.status(400).json({ error }));
                 } else if(sauce.usersDisliked.includes(userId)) {
 
-
-                    
                     // Supprimer dislike
                     Sauce.updateOne({_id: sauceId},
                         {
