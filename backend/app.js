@@ -14,10 +14,12 @@ const userRoutes = require('./routes/user');
 
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
-	max: 500, // Limit each IP to 500 requests per `window` (here, per 15 minutes)
+	max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
 	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 })
+
+
 
 mongoose.connect(`mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PWD}@${process.env.CLUSTER_NAME}.yncag.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`)
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -28,6 +30,8 @@ mongoose.connect(`mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PWD}
   // app.use(cors());
   app.use(limiter);
   
+  
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
